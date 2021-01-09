@@ -1,0 +1,236 @@
+#homeBody{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: #dff3e3 !important;
+}
+#fillBody{
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: #dff3e3 !important;
+}
+#postBody{
+  text-align: center;
+  background-image: url("1.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+.bigone{
+  width: 1360px;
+  height: 560px;
+  margin: 5%;
+  background-color: #5eaaa8;
+  padding: 30px;
+  border: solid 20px white;
+  border-radius: 20px;
+}
+
+.mediumone{
+  width: 1260px;
+  height: 460px;
+  background-color: #a3d2ca;
+  border-radius: 20px;
+  padding:20px;
+}
+
+.box1{
+  text-align: left;
+  float :left;
+  height: 420px;
+}
+
+.box2{
+  text-align: center;
+  height: 420px;
+  float: left;
+}
+
+.boxText{
+  margin-top: 100px;
+  margin-left: 30px;
+  font-weight: bold;
+}
+
+.boxText2{
+  margin-left: 30px;
+  font-size: 1rem;
+}
+
+.boxCard{
+  margin-top: 0;
+  margin-left: 150px;
+  padding: 10px;
+}
+
+.homeBtn{
+  margin-top:40px;
+  margin-left: 20px;
+  float : left;
+}
+
+.labtext {
+  margin: 0;
+  width: 100px;
+}
+
+.fillBigone{
+
+  margin: 2%;
+  background-color: #5eaaa8;
+  padding: 30px;
+  border: solid 20px white;
+  border-radius: 20px;
+}
+
+.fillMediumone{
+  background-color: #a3d2ca;
+  border-radius: 20px;
+  padding:20px;
+}
+h1 {
+  font-size: 3.5rem;
+  font-family: 'Dancing Script', cursive;
+  padding-top: 20px;
+}
+
+.inp {
+  width: 300px;
+  margin-left: 2%;
+  border-radius: .25rem;
+  border: 1px solid #ced4da;
+  padding: .375rem .75rem;
+}
+
+.inpp {
+  border-radius: .25rem;
+  border: 1px solid #ced4da;
+  padding: .375rem .75rem;
+}
+
+#ide {
+  margin-left: 55px;
+}
+
+.cards {
+  padding: 15px;
+  padding-bottom: 0px;
+  margin-top: 50px;
+  margin-left: 50px;
+  margin-right: 50px;
+  border-radius: 20px;
+}
+
+.card-body{
+  text-align: left;
+}
+
+.postsForm {
+  height: 50px;
+}
+
+.footer {
+  position: fixed;
+  height: 150px;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  border: solid 2px black;
+}
+
+.footer p {
+  margin-top: 60px;
+}
+
+.foo {
+  margin-top: 100px;
+}
+
+.container1{
+  text-align: left;
+  margin-left: 50px;
+}
+
+.timeCreation{
+  float :bottom;
+  float : right;
+  font-size: 0.65rem;
+}
+
+.naame{
+  float : right;
+  font-size: 0.8rem;
+}
+
+a{
+  text-decoration: underline;
+}
+
+.like{
+  width: 30px;
+  height: 30px;
+}
+
+.postCon{
+  text-align:  left;
+  magin:0;
+  padding:0;
+  padding-left: 30px;
+}
+
+.postImg{
+  float : right;
+  float: top;
+  height: 60%;
+  width:35%;
+  border-radius: 100%;
+  padding-top: 20px;
+  margin-right: 20px;
+}
+
+.desc{
+  font-size: 2rem;
+  font-family: 'Dancing Script', cursive;
+  margin-bottom: 15px;
+}
+
+.postTit{
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: 'Dancing Script', cursive;
+}
+
+.postName{
+  font-family: 'Dancing Script', cursive;
+  font-size: 1.5rem;
+}
+
+.fa-heart-o {
+  float: bottom;
+  float : left;
+  color: red;
+  cursor: pointer;
+}
+
+.fa-heart {
+  float: bottom;
+  float : left;
+  color: red;
+  cursor: pointer;
+}
+
+.postButton{
+  margin-right: 30px;
+  float :right;
+}
+
+.postHeading{
+  margin-top: 20px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 3.5rem;
+  font-weight: bold;
+
+}
