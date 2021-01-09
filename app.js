@@ -4,6 +4,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const app = express();
+const dotenv = require('dotenv');
+dotenv.config();
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
@@ -11,7 +13,8 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static(__dirname + "/public"));
 
-const connectionURL = "mongodb+srv://rahul:rahul123@cluster0.ltnlj.mongodb.net/postProject?retryWrites=true&w=majority"
+const connectionURL = "mongodb+srv://" +  process.env.MON_NAME + ":" + process.env.MON_PASS + "@cluster0.ltnlj.mongodb.net/postProject?retryWrites=true&w=majority";
+
 mongoose.connect(connectionURL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
