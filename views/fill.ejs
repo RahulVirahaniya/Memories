@@ -8,7 +8,7 @@
 
       <h1>Your Memory</h1>
       <br>
-      <form action="/posts" method="post">
+      <form action="/posts" method="post" enctype="multipart/form-data">
 
         <div class="form-group">
           <label for="name">Name</label>
@@ -26,8 +26,8 @@
         </div>
 
         <div class="form-group">
-          <label for="photoLink">Photo</label>
-          <input type="text" class="inp" placeholder="Photo Link" name="photoLink">
+          <label for="image">Upload Image</label>
+          <input type="file" id="image" name="userPhoto"  required>
         </div>
 
         <div class="form-group">
@@ -39,7 +39,7 @@
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </div>
-</div>
+  </div>
 </body>
 
-  <%-  include("footer") -%>
+<%-  include("footer") -%>

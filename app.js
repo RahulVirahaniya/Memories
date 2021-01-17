@@ -5,7 +5,11 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const app = express();
 const dotenv = require('dotenv');
-dotenv.config();
+var fs = require('fs');
+var path = require('path');
+var multer = require('multer');
+
+require('dotenv/config');
 
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({
@@ -13,18 +17,36 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static(__dirname + "/public"));
 
-const connectionURL = "mongodb+srv://" +  process.env.MON_NAME + ":" + process.env.MON_PASS + "@cluster0.ltnlj.mongodb.net/postProject?retryWrites=true&w=majority";
+const connectionURL = "mongodb+srv://" + process.env.MON_NAME + ":" + process.env.MON_PASS + "@cluster0.ltnlj.mongodb.net/postProject?retryWrites=true&w=majority";
 
 mongoose.connect(connectionURL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
+}, err => {
+  console.log('connected')
 });
+
+// image
+
+var storage = multer.diskStorage({
+  destination: 'public/uploads'
+  ,
+  filename: (req, file, cb) => {
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname) );
+  }
+});
+
+var upload = multer({
+  storage: storage
+});
+//
+
 
 const postSchema = new mongoose.Schema({
   name: String,
   title: String,
   tags: String,
-  photoLink: String,
+  img: String,
   content: String
 });
 
@@ -40,21 +62,10 @@ app.get("/", (req, res) => {
 app.get("/posts", (req, res) => {
 
   Post.find({}, function(err, finalResult) {
-
-    if (finalResult.length === 0) {
-      Item.insertMany(defaultItems, function(err) {
-        if (err) {
-          console.log(err);
-        } else {
-          console.log("NO error detected");
-        }
-      });
-      res.redirect("/");
-    } else {
       res.render("posts", {
         newListItems: finalResult
       });
-    }
+
   });
 });
 
@@ -70,12 +81,11 @@ app.post("/fill", (req, res) => {
 
 });
 
-app.post("/posts", (req, res) => {
+app.post("/posts", upload.single('userPhoto'), (req, res) => {
 
   let name = req.body.name;
   let title = req.body.title;
   let tags = req.body.tags;
-  let photoLink = req.body.photoLink;
   let content = req.body.content;
 
   const post = new Post({
@@ -83,13 +93,14 @@ app.post("/posts", (req, res) => {
     name: name,
     title: title,
     tags: tags,
-    photoLink: photoLink,
+    img: req.file.filename,
     content: content
   });
-  post.save((err, result) =>{
+  post.save((err, result) => {
     if (err) {
       console.log(err);
     } else {
+      console.log(req.file);
       console.log(result)
     }
   });
