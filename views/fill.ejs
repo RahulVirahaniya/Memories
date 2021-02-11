@@ -2,44 +2,51 @@
 
 <body id="fillBody">
 
-  <div class="fillBigone">
-
-    <div class="fillMediumone">
 
       <h1>Your Memory</h1>
       <br>
       <form action="/posts" method="post" enctype="multipart/form-data">
 
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="inp" placeholder="Enter name" name="name">
-        </div>
-
-        <div class="form-group">
-          <label for="title">Title</label>
-          <input type="text" class="inp" placeholder="Enter Title" name="title">
-        </div>
-
-        <div class="form-group">
-          <label for="tags">Tags</label>
-          <input type="text" class="inp" placeholder="Enter Tags" name="tags">
-        </div>
-
-        <div class="form-group">
-          <label for="image">Upload Image</label>
-          <input type="file" id="image" name="userPhoto"  required>
-        </div>
-
-        <div class="form-group">
-          <label for="content">Description</label>
+        <div class="card fillCard" style="width: 18rem;">
           <br>
-          <textarea class="inpp" placeholder="Enter Description" name="content" rows="4" cols="100"></textarea>
+          <div class="form-group">
+            <label for="image">Upload Image</label>
+            <br>
+            <input type="file" id="image" name="userPhoto"  required>
+          </div>
+
+          <div class="card-body">
+
+            <div class="form-group">
+              <label for="title">Title</label>
+              <input type="text" class="inp" placeholder="Enter Title" name="title">
+            </div>
+
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" class="inp" placeholder="Enter name" name="name">
+            </div>
+
+            <div class="form-group">
+              <label for="tags">Tags</label>
+              <input type="text" class="inp" placeholder="Enter Tags" name="tags">
+            </div>
+
+            <div class="form-group">
+              <label for="content">Description</label>
+              <br>
+              <textarea class="inpp" placeholder="Enter Description" name="content" rows="4" cols="48"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+
+            <p class="card-text"><small class="text-muted timeCreation">Created x mins ago</small></p>
+
+          </div>
         </div>
 
-        <button type="submit" class="btn btn-primary">Submit</button>
       </form>
-    </div>
-  </div>
+
 </body>
 
 <%-  include("footer") -%>

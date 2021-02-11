@@ -1,15 +1,26 @@
-<%-  include("header") -%>
-  <body>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+
+  <title>Memories</title>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mukta&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/postStyle.css">
+
+</head>
+
+<body>
 
 <div class="postCon">
+      <% const imgPath = "../uploads/" + doc.img; %>
+      <img class="postImg" src="<%= imgPath %>" alt="Photo">
 
-      <img class="postImg" src="<%= doc.photoLink %>" alt="Photo">
-
-      <p class="postTit"><%= doc.title %></p>
+      <p class="postTit"><%= doc.title.toUpperCase() %></p>
 
       <p class= "postName">Author : <%= doc.name %></p>
-
-      <div class="desc">Description</div>
 
       <p class="postCont"><%= doc.content %></p>
 
@@ -18,4 +29,9 @@
 </body>
 
 
-<%- include("footer") -%>
+
+<div class="foo">
+
+</div>
+
+</html>

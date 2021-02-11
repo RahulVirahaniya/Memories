@@ -1,0 +1,46 @@
+body{
+  margin: 0;
+  margin-left: 20px;
+  background: #19456b;
+  color: white;
+}
+.postImg{
+  float : right;
+  float: top;
+  width: 600px;
+  height: 400px;
+  margin-top: 25px;
+  border-radius: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.desc{
+  font-size: 2rem;
+  font-weight: bold;
+  font-family: 'Mukta', sans-serif;
+  margin-bottom: 15px;
+}
+
+.postTit{
+  font-size: 4rem;
+  font-weight: bold;
+  margin-bottom: 0;
+  text-decoration: underline;
+  font-family: 'Mukta', sans-serif;
+}
+
+.postName{
+  font-weight: bold;
+  margin-top: 10px;
+  font-family: 'Mukta', sans-serif;
+  font-size: 1.5rem;
+}
+
+.postCon{
+  text-align:  left;
+  magin:0;
+  padding:0;
+  font-family: 'Mukta', sans-serif;
+  padding-left: 30px;
+}

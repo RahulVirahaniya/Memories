@@ -12,7 +12,7 @@
 }
 #postBody{
   text-align: center;
-  background-image: url("/images/1.jpg");
+  background: #dff3e3;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -64,6 +64,15 @@
   padding: 10px;
 }
 
+.fillCard{
+  width: 450px !important;
+  margin-top: 0;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+  border-radius: 10px;
+}
+
 .homeBtn{
   margin-top:40px;
   margin-left: 20px;
@@ -91,13 +100,15 @@
 }
 h1 {
   font-size: 3.5rem;
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Mukta', sans-serif;
   padding-top: 20px;
 }
 
 .inp {
-  width: 300px;
-  margin-left: 2%;
+  float: right;
+  width: 280px;
+  margin-right: 40px;
+  margin-left : 20px;
   border-radius: .25rem;
   border: 1px solid #ced4da;
   padding: .375rem .75rem;
@@ -125,7 +136,10 @@ h1 {
 .card-body{
   text-align: left;
 }
-
+.postImages{
+  width: 333px;
+  height: 210px;
+}
 .postsForm {
   height: 50px;
 }
@@ -174,40 +188,6 @@ a{
   height: 30px;
 }
 
-.postCon{
-  text-align:  left;
-  magin:0;
-  padding:0;
-  padding-left: 30px;
-}
-
-.postImg{
-  float : right;
-  float: top;
-  height: 60%;
-  width:35%;
-  border-radius: 100%;
-  padding-top: 20px;
-  margin-right: 20px;
-}
-
-.desc{
-  font-size: 2rem;
-  font-family: 'Dancing Script', cursive;
-  margin-bottom: 15px;
-}
-
-.postTit{
-  font-size: 4rem;
-  font-weight: bold;
-  font-family: 'Dancing Script', cursive;
-}
-
-.postName{
-  font-family: 'Dancing Script', cursive;
-  font-size: 1.5rem;
-}
-
 .fa-heart-o {
   float: bottom;
   float : left;
@@ -229,7 +209,7 @@ a{
 
 .postHeading{
   margin-top: 20px;
-  font-family: 'Dancing Script', cursive;
+  font-family: 'Mukta', sans-serif;
   font-size: 3.5rem;
   font-weight: bold;
 
