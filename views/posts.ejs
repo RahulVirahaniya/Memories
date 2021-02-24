@@ -14,13 +14,15 @@
     </form>
 
     <br>
+    <hr class="hrs">
+
     <div class="card-group">
       <% newListItems.forEach(function(item){ %>
-      <div class="col col-lg-4 top-text col-sm-12">
+      <div class="col col-lg-4 col-md-6 top-text col-sm-12">
 
         <div class="card cards">
           <% const imgPath = "uploads/" + item.img; %>
-          <img class="card-img-top postImages" src="<%= imgPath %>" alt="Card image cap">
+          <img class="card-img-top" src="<%= imgPath %>" alt="Card image cap">
           <div class="card-body">
 
             <p class="card-text"><small class="text-muted" style="font-size: 1rem"><%= item.tags %></small></p>
@@ -33,17 +35,17 @@
               <a style="font-size : 0.9rem" href="/posts/<%=  item._id  %>">Read More</a>
             </p>
 
-            <span id=heart><i class="fa fa-heart-o" aria-hidden="true"></i> </span>
 
-            <form action="edit" method="post">
-              <input type="hidden" name="editId" value="<%=  item._id  %>">
-              <button class="editBtn" type="submit" name="button"><i class="fas fa-edit"></i></button>
-            </form>
 
             <form action="deletePost" method="post">
               <input type="hidden" name="delname" value="<%=  item._id  %>">
               <input type="hidden" name="delimage" value="<%=  item.img  %>">
               <button class="deleteBtn" type="submit" name="button"><span><i class="fas fa-trash"></i></span></button>
+            </form>
+
+            <form action="edit" method="post">
+              <input type="hidden" name="editId" value="<%=  item._id  %>">
+              <button class="deleteBtn" type="submit" name="button"><i class="fas fa-edit"></i></button>
             </form>
 
             <p class="card-text"><small class="text-muted timeCreation">Created 3 mins ago</small></p>

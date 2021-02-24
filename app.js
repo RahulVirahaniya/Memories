@@ -17,15 +17,21 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static(__dirname + "/public"));
 
-const connectionURL = "mongodb+srv://" + process.env.MON_NAME + ":" + process.env.MON_PASS + "@cluster0.ltnlj.mongodb.net/postProject?retryWrites=true&w=majority";
+// Online DB
+// const connectionURL = "mongodb+srv://" + process.env.MON_NAME + ":" + process.env.MON_PASS + "@cluster0.ltnlj.mongodb.net/postProject?retryWrites=true&w=majority";
+//
+// mongoose.connect(connectionURL, {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true
+// }, err => {
+//   console.log('connected')
+// });
 
-mongoose.connect(connectionURL, {
+// Offline DB
+mongoose.connect('mongodb://localhost:27017/Posts', {
   useNewUrlParser: true,
   useUnifiedTopology: true
-}, err => {
-  console.log('connected')
 });
-
 // image
 
 var storage = multer.diskStorage({
@@ -50,7 +56,7 @@ const postSchema = new mongoose.Schema({
 
 const Post = mongoose.model("Post", postSchema);
 
-const defaultItems = [];
+
 
 app.get("/", (req, res) => {
 
@@ -102,7 +108,7 @@ app.post("/posts", upload.single('userPhoto'), (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      console.log(req.file);
+      // console.log(req.file);
       console.log(result)
     }
   });
@@ -136,20 +142,49 @@ app.post("/deletePost", (req, res) => {
 //  edit page
 app.post("/edit", (req, res) => {
 
-  let id = req.body.editId;
-  Post.find({
-    _id: id
+  let ide = req.body.editId;
+  Post.findOne({
+    _id: ide
   }, (err, results) => {
     if (err) {
       console.log("Not able to edit");
     } else {
       console.log(results);
       res.render("edit", {
-        item : results
+        item: results
       });
     }
   });
 });
+
+// Save edit
+
+app.post("/saveEdit", (req, res) => {
+  let id = req.body.id;
+  let name = req.body.name;
+  let title = req.body.title;
+  let tags = req.body.tags;
+  let content = req.body.content;
+
+
+  Post.findOne({
+    _id: id
+  }, (err, doc) => {
+
+    if (err) {
+      console.log("unable to save edit");
+    } else {
+      doc.name = name;
+      doc.title = title;
+      doc.tags = tags;
+      doc.content = content;
+      doc.save();
+      res.redirect("/posts");
+    }
+  })
+
+});
+
 
 // Individual page
 

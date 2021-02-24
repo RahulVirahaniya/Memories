@@ -1,24 +1,26 @@
-#homeBody{
+#homeBody {
   margin: 0;
   padding: 0;
   text-align: center;
   background: linear-gradient(#79a3b1, #d0e8f2);
 }
-#fillBody{
-  margin: 0;
-  padding: 0;
-  text-align: center;
-  background: linear-gradient(#79a3b1, #d0e8f2);
 
+#fillBody {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  background: linear-gradient(#79a3b1, #d0e8f2);
 }
-#postBody{
+
+#postBody {
   text-align: center;
   background: linear-gradient(#79a3b1, #d0e8f2);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
 }
-.bigone{
+
+.bigone {
   width: 1360px;
   height: 560px;
   margin: 5%;
@@ -28,44 +30,44 @@
   border-radius: 15px;
 }
 
-.mediumone{
+.mediumone {
   width: 1260px;
   height: 460px;
   background-color: #a3d2ca;
   border-radius: 12px;
-  padding:20px;
+  padding: 20px;
 }
 
-.box1{
+.box1 {
   text-align: left;
-  float :left;
+  float: left;
   height: 420px;
 }
 
-.box2{
+.box2 {
   text-align: center;
   height: 420px;
   float: left;
 }
 
-.boxText{
+.boxText {
   margin-top: 100px;
   margin-left: 30px;
   font-weight: bold;
 }
 
-.boxText2{
+.boxText2 {
   margin-left: 30px;
   font-size: 1rem;
 }
 
-.boxCard{
+.boxCard {
   margin-top: 0;
   margin-left: 150px;
   padding: 10px;
 }
 
-.fillCard{
+.fillCard {
   width: 450px !important;
   margin-top: 0;
   margin-left: auto;
@@ -74,10 +76,10 @@
   border-radius: 10px;
 }
 
-.homeBtn{
-  margin-top:40px;
+.homeBtn {
+  margin-top: 40px;
   margin-left: 20px;
-  float : left;
+  float: left;
 }
 
 .labtext {
@@ -85,8 +87,7 @@
   width: 100px;
 }
 
-.fillBigone{
-
+.fillBigone {
   margin: 2%;
   background-color: #5eaaa8;
   padding: 30px;
@@ -94,11 +95,12 @@
   border-radius: 20px;
 }
 
-.fillMediumone{
+.fillMediumone {
   background-color: #a3d2ca;
   border-radius: 20px;
-  padding:20px;
+  padding: 20px;
 }
+
 h1 {
   font-size: 4rem;
   font-family: 'Dancing Script', cursive !important;
@@ -110,7 +112,7 @@ h1 {
   float: right;
   width: 280px;
   margin-right: 40px;
-  margin-left : 20px;
+  margin-left: 20px;
   border-radius: .25rem;
   border: 1px solid #ced4da;
   padding: .375rem .75rem;
@@ -135,13 +137,15 @@ h1 {
   border-radius: 20px;
 }
 
-.card-body{
+.card-body {
   text-align: left;
 }
-.postImages{
+
+.postImages {
   width: 333px;
   height: 210px;
 }
+
 .postsForm {
   height: 50px;
 }
@@ -165,89 +169,102 @@ h1 {
   margin-top: 100px;
 }
 
-.container1{
+.container1 {
   text-align: left;
   margin-left: 50px;
 }
 
-.timeCreation{
-  float :bottom;
-  float : right;
+.timeCreation {
+  float: bottom;
+  float: right;
   font-size: 0.65rem;
 }
 
-.naame{
-  float : right;
+.naame {
+  float: right;
   font-size: 0.8rem;
 }
 
-a{
+a {
   text-decoration: underline;
 }
 
-.like{
+.like {
   width: 30px;
   height: 30px;
 }
 
 .fa-heart-o {
   float: bottom;
-  float : left;
+  float: left;
   color: red;
   cursor: pointer;
 }
 
 .fa-heart {
   float: bottom;
-  float : left;
+  float: left;
   color: red;
   cursor: pointer;
 }
-.fas{
+
+.fas {
   float: bottom;
-  float : left;
+  float: left;
   cursor: pointer;
 }
-.postButton{
+
+.postButton {
   margin-right: 50px;
-  float :right;
+  float: right;
 }
-.homeButton{
+
+.homeButton {
   margin-left: 50px;
-  float : left;
+  float: left;
 }
-.postHeading{
+
+.postHeading {
   margin-left: auto;
   margin-right: auto;
   text-align: center;
   background: linear-gradient(#fdffbc, #ffe227);
-  padding : 20px;
+  padding: 20px;
   width: 500px;
   border: solid 5px black;
   border-radius: 15px;
   margin-top: 20px;
-
   font-size: 3.5rem;
   font-weight: bold;
 }
 
-.deleteBtn {
+.editBtn {
   float: bottom;
-  float : right;
+  float: right;
   border: none;
   padding: 0;
-  margin:0;
+  margin: 0;
   margin-left: 10px;
   font-size: 16px;
   cursor: pointer;
 }
-.editBtn{
+
+.deleteBtn {
   float: bottom;
-  
+  float: right;
   border: none;
   padding: 0;
-  margin:0;
+  margin: 0;
   margin-left: 10px;
   font-size: 16px;
   cursor: pointer;
+}
+
+.hrs {
+  width: 1400px;
+  border: solid black;
+}
+
+.timeCreation{
+  float: left !important;
 }
