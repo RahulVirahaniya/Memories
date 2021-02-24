@@ -29,17 +29,15 @@ mongoose.connect(connectionURL, {
 // image
 
 var storage = multer.diskStorage({
-  destination: 'public/uploads'
-  ,
+  destination: 'public/uploads',
   filename: (req, file, cb) => {
-    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname) );
+    cb(null, file.fieldname + '-' + Date.now() + path.extname(file.originalname));
   }
 });
 
 var upload = multer({
   storage: storage
 });
-//
 
 
 const postSchema = new mongoose.Schema({
@@ -59,15 +57,7 @@ app.get("/", (req, res) => {
   res.render("home");
 });
 
-app.get("/posts", (req, res) => {
-
-  Post.find({}, function(err, finalResult) {
-      res.render("posts", {
-        newListItems: finalResult
-      });
-
-  });
-});
+// Fill page
 
 app.get("/fill", (req, res) => {
 
@@ -79,6 +69,18 @@ app.post("/fill", (req, res) => {
 
   res.redirect("/posts");
 
+});
+
+// All posts page
+
+app.get("/posts", (req, res) => {
+
+  Post.find({}, function(err, finalResult) {
+    res.render("posts", {
+      newListItems: finalResult
+    });
+
+  });
 });
 
 app.post("/posts", upload.single('userPhoto'), (req, res) => {
@@ -107,6 +109,49 @@ app.post("/posts", upload.single('userPhoto'), (req, res) => {
   res.redirect("/posts");
 
 });
+
+app.post("/deletePost", (req, res) => {
+  let id = req.body.delname;
+  let delimage = req.body.delimage;
+  Post.deleteOne({
+    _id: id
+  }, (err) => {
+    if (err) {
+      console.log(err);
+    } else {
+      try {
+        fs.unlinkSync('public/uploads/' + delimage);
+        console.log("Successfully deleted");
+        res.redirect("/posts");
+      } catch (e) {
+        console.log("Error in deleting");
+      }
+
+    }
+  });
+
+});
+
+
+//  edit page
+app.post("/edit", (req, res) => {
+
+  let id = req.body.editId;
+  Post.find({
+    _id: id
+  }, (err, results) => {
+    if (err) {
+      console.log("Not able to edit");
+    } else {
+      console.log(results);
+      res.render("edit", {
+        item : results
+      });
+    }
+  });
+});
+
+// Individual page
 
 app.get("/posts/:postName", (req, res) => {
 

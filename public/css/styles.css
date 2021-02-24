@@ -2,17 +2,18 @@
   margin: 0;
   padding: 0;
   text-align: center;
-  background: #dff3e3 !important;
+  background: linear-gradient(#79a3b1, #d0e8f2);
 }
 #fillBody{
   margin: 0;
   padding: 0;
   text-align: center;
-  background: #dff3e3 !important;
+  background: linear-gradient(#79a3b1, #d0e8f2);
+
 }
 #postBody{
   text-align: center;
-  background: #dff3e3;
+  background: linear-gradient(#79a3b1, #d0e8f2);
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -24,14 +25,14 @@
   background-color: #5eaaa8;
   padding: 30px;
   border: solid 20px white;
-  border-radius: 20px;
+  border-radius: 15px;
 }
 
 .mediumone{
   width: 1260px;
   height: 460px;
   background-color: #a3d2ca;
-  border-radius: 20px;
+  border-radius: 12px;
   padding:20px;
 }
 
@@ -99,9 +100,10 @@
   padding:20px;
 }
 h1 {
-  font-size: 3.5rem;
-  font-family: 'Mukta', sans-serif;
+  font-size: 4rem;
+  font-family: 'Dancing Script', cursive !important;
   padding-top: 20px;
+  font-weight: bold !important;
 }
 
 .inp {
@@ -201,16 +203,51 @@ a{
   color: red;
   cursor: pointer;
 }
-
+.fas{
+  float: bottom;
+  float : left;
+  cursor: pointer;
+}
 .postButton{
-  margin-right: 30px;
+  margin-right: 50px;
   float :right;
 }
-
+.homeButton{
+  margin-left: 50px;
+  float : left;
+}
 .postHeading{
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  background: linear-gradient(#fdffbc, #ffe227);
+  padding : 20px;
+  width: 500px;
+  border: solid 5px black;
+  border-radius: 15px;
   margin-top: 20px;
-  font-family: 'Mukta', sans-serif;
+
   font-size: 3.5rem;
   font-weight: bold;
+}
 
+.deleteBtn {
+  float: bottom;
+  float : right;
+  border: none;
+  padding: 0;
+  margin:0;
+  margin-left: 10px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.editBtn{
+  float: bottom;
+  
+  border: none;
+  padding: 0;
+  margin:0;
+  margin-left: 10px;
+  font-size: 16px;
+  cursor: pointer;
 }

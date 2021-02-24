@@ -3,7 +3,7 @@
 <body id="fillBody">
 
 
-      <h1>Your Memory</h1>
+      <h1>Edit Your Memory</h1>
       <br>
       <form action="/posts" method="post" enctype="multipart/form-data">
 
@@ -19,28 +19,26 @@
 
             <div class="form-group">
               <label for="title">Title</label>
-              <input type="text" class="inp" placeholder="Enter Title" name="title">
+              <input type="text" class="inp" name="title" value="hello world">
             </div>
 
             <div class="form-group">
               <label for="name">Name</label>
-              <input type="text" class="inp" placeholder="Enter name" name="name">
+              <input type="text" class="inp" name="name" value=<%= console.log(item._id) %>>
             </div>
 
             <div class="form-group">
               <label for="tags">Tags</label>
-              <input type="text" class="inp" placeholder="Enter Tags" name="tags">
+              <input type="text" class="inp" value="<%= item.tags %>" name="tags">
             </div>
 
             <div class="form-group">
               <label for="content">Description</label>
               <br>
-              <textarea class="inpp" placeholder="Enter Description" name="content" rows="4" cols="48"></textarea>
+              <textarea class="inpp" value="<%= item.content %>" name="content" rows="4" cols="48"></textarea>
             </div>
 
-            <button type="submit" class="btn btn-primary">Submit</button>
-
-            <p class="card-text"><small class="text-muted timeCreation">Created x mins ago</small></p>
+            <button type="submit" class="btn btn-primary">Save</button>
 
           </div>
         </div>

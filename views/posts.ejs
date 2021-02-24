@@ -3,9 +3,14 @@
 <body id="postBody">
   <div class="posts">
 
-    <h1 class="postHeading"> Memories ❤️ </h1>
+    <div class="postHeading">
+      <h1> Memories </h1>
+    </div>
+
+    <a href="/"><button class="btn btn-dark homeButton" type="submit" name="button">Back To Home</button></a>
+
     <form action="fill" class="postsForm">
-      <button class="btn btn-primary postButton" type="submit" name="button">Add new Memory</button>
+     <button class="btn btn-dark postButton" type="submit" name="button">Add new Memory</button>
     </form>
 
     <br>
@@ -24,9 +29,22 @@
 
             <h5 class="card-title"><%=  item.title  %></h5>
 
-            <p class="card-text"><%= item.content.substr(0,150) %><br> <a style="font-size : 0.9rem" href="/posts/<%=  item._id  %>">Read More</a></p>
+            <p class="card-text"><%= item.content.substr(0,150) %><br>
+              <a style="font-size : 0.9rem" href="/posts/<%=  item._id  %>">Read More</a>
+            </p>
 
             <span id=heart><i class="fa fa-heart-o" aria-hidden="true"></i> </span>
+
+            <form action="edit" method="post">
+              <input type="hidden" name="editId" value="<%=  item._id  %>">
+              <button class="editBtn" type="submit" name="button"><i class="fas fa-edit"></i></button>
+            </form>
+
+            <form action="deletePost" method="post">
+              <input type="hidden" name="delname" value="<%=  item._id  %>">
+              <input type="hidden" name="delimage" value="<%=  item.img  %>">
+              <button class="deleteBtn" type="submit" name="button"><span><i class="fas fa-trash"></i></span></button>
+            </form>
 
             <p class="card-text"><small class="text-muted timeCreation">Created 3 mins ago</small></p>
           </div>
@@ -38,18 +56,6 @@
   </div>
 </body>
 
-<script type="text/javascript">
-  $(document).ready(function() {
-    $("#heart").click(function() {
-      if ($("#heart").hasClass("liked")) {
-        $("#heart").html('<i class="fa fa-heart-o" aria-hidden="true"></i>');
-        $("#heart").removeClass("liked");
-      } else {
-        $("#heart").html('<i class="fa fa-heart" aria-hidden="true"></i>');
-        $("#heart").addClass("liked");
-      }
-    });
-  });
-</script>
+
 
 <%-  include("footer") -%>
