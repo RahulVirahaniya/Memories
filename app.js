@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static(__dirname + "/public"));
 
-// Online DB
+// Online DB Currently disabled
 // const connectionURL = "mongodb+srv://" + process.env.MON_NAME + ":" + process.env.MON_PASS + "@cluster0.ltnlj.mongodb.net/postProject?retryWrites=true&w=majority";
 //
 // mongoose.connect(connectionURL, {
